@@ -1,1 +1,5 @@
-console.log("website berhasil berjalan!")
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    window.location.href = 'dashboard.html';
+});
