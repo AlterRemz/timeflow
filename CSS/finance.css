@@ -1,0 +1,63 @@
+.finance-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.finance-header {
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+.finance-header h2{
+    color: var(--text-primary);
+    font-size: 28px;
+}
+
+.finance-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0 ,0 ,0 , 0.03);
+    border: 1px solid var(--border-color);
+}
+
+.card h4 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.card .amount {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.card.income .amount { color: #38a169;}
+.card.expense .amount { color: #e53e3e;}
