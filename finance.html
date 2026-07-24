@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance - TimeFlow</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/finance.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="CSS/finance.css">
 </head>
 <body>
-    <div class="finance-container">
 
-        <!-- Header -->
-        <header class="finance-header">
-            <a href="dashboard.html" class="back-link">Kembali ke Dashboard</a>
-            <h2>Finance Tracking</h2>
-            <p>Kelola pemasukan dan pengeluaranmu dengan mudah</p>
-        </header>
-
-        <!--Card Ringkasan Saldo-->
-        <div class="summary-cards">
-            <div class="card">
-                <h4>TOTAL SALDO</h4>
-                <p class="amount">Rp 0</p>
-            </div>
-            <div class="card income">
-                <h4>PEMASUKAN</h4>
-                <p class="amount">Rp 0</p>
-            </div>
-            <div class="card expense">
-                <h4>PENGELUARAN</h4>
-                <p class="amount">Rp 0</p>
-            </div>
-        </div>
+  <div class="app-container">
+    
+    <div class="status-bar">
+      <a href="dashboard.html" class="back-link">← Kembali ke Dashboard</a>
+      <div class="status-icons">
+        <div class="icon-placeholder"></div>
+        <div class="icon-placeholder"></div>
+      </div>
     </div>
+
+    <header class="app-header">
+      <div class="user-avatar"></div>
+      <div class="notification-icon"></div>
+    </header>
+
+    <section class="balance-section">
+      <span class="label">Total balance</span>
+      <h1 class="balance-amount">Rp 1,000<span class="cents">.00</span></h1>
+      
+      <div class="action-buttons">
+        <button class="btn btn-primary">Send</button>
+        <button class="btn btn-secondary">Request</button>
+      </div>
+    </section>
+
+    <section class="spending-section">
+      <div class="spending-card">
+        <span class="label">Spending</span>
+        <h2 class="spending-amount">Rp1,000</h2>
+      </div>
+    </section>
+
+  </div>
+
 </body>
 </html>
