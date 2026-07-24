@@ -1,18 +1,24 @@
-function goToPage(page) {
-  const slider = document.getElementById('pagesSlider');
-  const buttons = document.querySelectorAll('.nav-btn');
+let balance = Number(localStorage.getItem("balance")) || 1000;
 
-  // Reset status aktif tombol navigasi
-  buttons.forEach(btn => btn.classList.remove('active'));
+const balanceText = document.getElementById("balance");
 
-  if (page === 'left') {
-    slider.style.transform = 'translateX(0%)';
-    buttons[0].classList.add('active');
-  } else if (page === 'center') {
-    slider.style.transform = 'translateX(-33.333%)';
-    buttons[1].classList.add('active');
-  } else if (page === 'right') {
-    slider.style.transform = 'translateX(-66.666%)';
-    buttons[2].classList.add('active');
-  }
+const incomeBtn = document.getElementById("incomeBtn");
+
+function tampilkanSaldo() {
+  balanceText.innerHTML = `Rp ${balance.toLocaleString("id-ID")}<span class="cents">.00</span>`;
 }
+
+tampilkanSaldo();
+
+incomeBtn.addEventListener("click", () => {
+  const nominal = Number(prompt("Masukkan nominal income"));
+
+  if (!nominal || nominal <= 0) return;
+
+  balance += nominal;
+
+localStorage.setItem("balance", balance);
+
+  tampilkanSaldo();
+
+})
