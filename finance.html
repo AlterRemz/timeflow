@@ -11,7 +11,7 @@
   <div class="app-container">
     
     <div class="status-bar">
-      <a href="dashboard.html" class="back-link">← Kembali ke Dashboard</a>
+      <a href="dashboard.html" class="back-link">Kembali ke Dashboard</a>
       <div class="status-icons">
         <div class="icon-placeholder"></div>
         <div class="icon-placeholder"></div>
@@ -29,7 +29,7 @@
       
       <div class="action-buttons">
         <button id="incomeBtn" class="btn btn-primary">Income</button>
-        <button class="btn btn-secondary">Expense</button>
+        <button id="expenseBtn" class="btn btn-secondary">Expense</button>
       </div>
     </section>
 
@@ -41,6 +41,26 @@
     </section>
 
   </div>
+
+  <div id="modal" class="modal">
+
+    <div class="modal-content">
+      <h2>Input Nominal</h2>
+      
+      <input id="amountInput" type="number" placeholder="Masukkan Nominal">
+      
+      <div class="modal-button">
+
+        <button id="cancelBtn">Batal</button>
+
+        <button id="saveBtn">Simpan</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <script src="JS/finance.js"></script>
 </body>
 </html>
