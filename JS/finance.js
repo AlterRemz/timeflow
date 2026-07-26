@@ -1,5 +1,7 @@
 let balance = Number(localStorage.getItem("balance")) || 1000;
 
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
 let mode = "";
 
 const balanceText = document.getElementById("balance");
@@ -16,6 +18,12 @@ const saveBtn = document.getElementById("saveBtn");
 
 const amountInput = document.getElementById("amountInput");
 
+const categoryInput = document.getElementById("categoryInput");
+
+const accountInput = document.getElementById("accountInput");
+
+const historyList = document.getElementById("historyList");
+
 function tampilkanSaldo() {
   balanceText.innerHTML = `Rp ${balance.toLocaleString("id-ID")}<span class="cents">.00</span>`;
 }
@@ -28,7 +36,15 @@ incomeBtn.addEventListener("click", () => {
 
   modal.style.display = "flex"
 
-})
+});
+
+expenseBtn.addEventListener("click", () => {
+
+  mode = "expense";
+
+  modal.style.display = "flex";
+  
+});
 
 cancelBtn.addEventListener("click", () => {
   modal.style.display = "none";
@@ -36,6 +52,26 @@ cancelBtn.addEventListener("click", () => {
 
 saveBtn.addEventListener("click", () => {
   const nominal = Number(amountInput.value);
+
+  const category = categoryInput.value;
+
+  const account = accountInput.value;
+
+  const transaction = {
+    type: mode,
+    amount: nominal,
+    category: category,
+    account: account
+  };
+
+transactions.push(transaction);
+
+  localStorage.setItem(
+    "transaction",
+    JSON.stringify(transactions)
+  );
+
+  console.log(transactions);
 
   if (!nominal || nominal <= 0) return;
   
@@ -47,19 +83,19 @@ saveBtn.addEventListener("click", () => {
   }
 
 localStorage.setItem("balance", balance);
+
+  const item = document.createElement("div");
+
+  item.textContent = `${mode} - Rp ${nominal.toLocaleString("id-ID")}`;
+
+  historyList.appendChild(item);
   
   tampilkanSaldo();
   
   amountInput.value = "";
 
+  categoryInput.value = "";
+
   modal.style.display = "none";
+
 });
-
-expenseBtn.addEventListener("click", () => {
-
-  mode = "expense";
-
-  modal.style.display = "flex";
-  
-});
-
