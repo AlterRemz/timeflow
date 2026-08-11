@@ -1,5 +1,7 @@
 # TimeFlow
 
+![Status](https://img.shields.io/badge/Status-In_Active_Development-yellow?style=for-the-badge)
+
 TimeFlow is a personal web application designed to help manage daily time and finances in one place.
 
 ## Goals
@@ -14,7 +16,3 @@ TimeFlow is a personal web application designed to help manage daily time and fi
 - HTML
 - CSS
 - JavaScript
-
-## Status
-
-🚧 Under Development
